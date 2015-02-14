@@ -18,7 +18,7 @@
 // Provide your access token
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2luZGh1LW1zIiwiYSI6IjIwak0wX2sifQ.UhAe7OMlmsIPaBFZ9kzLPw';
 // Create a map in the div #map
-L.mapbox.map('map', 'sindhu-ms.l78edid4');
+var map = L.mapbox.map('map', 'sindhu-ms.l78edid4');
 var featureLayer = L.mapbox.featureLayer()
     .loadURL('map.geojson')
     .addTo(map);
