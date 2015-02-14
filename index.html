@@ -24,6 +24,7 @@ var map = L.mapbox.map('map', 'sindhu-ms.l79pof7c');
 var featureLayer = L.mapbox.featureLayer()
     .loadURL('hospital.geojson');
     //.addTo(map);
+var myLayer = L.mapbox.featureLayer().addTo(map);
 //marker clustering
 featureLayer.on('ready', function(e) {
     // The clusterGroup gets each marker in the group added to it
