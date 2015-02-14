@@ -19,9 +19,20 @@
 L.mapbox.accessToken = 'pk.eyJ1Ijoic2luZGh1LW1zIiwiYSI6IjIwak0wX2sifQ.UhAe7OMlmsIPaBFZ9kzLPw';
 // Create a map in the div #map
 var map = L.mapbox.map('map', 'sindhu-ms.l78edid4');
+//adding theatres
 var featureLayer = L.mapbox.featureLayer()
     .loadURL('map.geojson')
     .addTo(map);
+//marker clustering
+L.mapbox.featureLayer('sindhu-ms.l78edid4').on('ready', function(e) {
+    // The clusterGroup gets each marker in the group added to it
+    // once loaded, and then is added to the map
+    var clusterGroup = new L.MarkerClusterGroup();
+    e.target.eachLayer(function(layer) {
+        clusterGroup.addLayer(layer);
+    });
+    map.addLayer(clusterGroup);
+
 </script>
 </body>
 </html>
