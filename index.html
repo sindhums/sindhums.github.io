@@ -35,7 +35,7 @@ featureLayer.on('ready', function(e) {
     });
     map.addLayer(clusterGroup);
 });
-myLayer.setGeoJSON(featureLayer);
+myLayer.setGeoJSON('hospital.geojson');
 myLayer.on('mouseover', function(e) {
     e.layer.openPopup();
 });
